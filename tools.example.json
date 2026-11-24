@@ -1,0 +1,40 @@
+[
+  {
+    "name": "get_order",
+    "description": "주문번호로 주문 상세(상품, 결제금액, 결제수단)를 조회한다.",
+    "method": "GET",
+    "url": "/api/orders/{order_no}",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "order_no": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_no"
+      ]
+    }
+  },
+  {
+    "name": "request_refund",
+    "description": "환불을 접수한다. 고객에게 환불 대상과 금액을 확인받은 뒤에만 호출.",
+    "method": "POST",
+    "url": "/api/refunds",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "order_no": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "order_no",
+        "amount"
+      ]
+    }
+  }
+]
