@@ -62,5 +62,11 @@ uvicorn app:app --port 8000
 
 LLM은 `LLM_PROVIDER`로 `anthropic`, `openai`, `fake` 중에서 고를 수 있습니다.
 
+## 검증 범위 및 한계
+
+- 모의 LLM과 액션 API로 웹훅·콜백 흐름을 확인할 수 있습니다. 실제 주문 처리 성능이나 상담 품질을 보장하는 검증은 아닙니다.
+- 입력 검사와 출력 검사, 프롬프트 기반 주문 확인 절차는 방어 수단이며 모든 공격이나 잘못된 도구 호출을 방지한다고 볼 수 없습니다.
+- 실제 서비스 운영 시에는 도구 서버의 별도 인증·인가 및 주문 소유권 검증이 필요합니다.
+
 ## 기술 스택
 Python, FastAPI, httpx, LLM tool calling, Docker, Render, 카카오톡 봇 API
